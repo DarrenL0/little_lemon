@@ -88,22 +88,32 @@ img {
 }
 
 .button-primary {
-  padding: 0.5rem 1rem;
-  border-radius: 2rem;
   background-color: #f4ce14;
-  color: #495e57;
-  font-weight: bold;
-  border: 2px solid #f4ce14;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 0.2rem;
+  font-family: "Karla";
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
 .button-primary:hover,
 .button-primary:focus {
   background-color: #495e57;
-  border-color: #495e57;
-  color: #ffffff;
+  color: #eeeeee;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #edefee;
+  transition: 0.2s;
 }
 
 /*Header Styling*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
 nav {
   padding: 1rem;
 }
@@ -129,6 +139,55 @@ nav ul li a {
 nav ul li a:hover {
   /* background-color: #555; */
   border-radius: 4px;
+}
+
+/*HOME*/
+.call-to-action {
+  background-color: #495e57;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1.25rem 5rem 1.2rem 5rem;
+}
+
+.hero-text{
+  padding: 2rem;
+}
+.hero-text > h1 {
+  color: #f4ce14;
+  font-size: 64 px;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-text > h2 {
+  color: #ffffff;
+  font-size: 40px;
+  height: 2.25rem;
+  line-height: 2.25rem;
+  margin-bottom: 15px;
+}
+
+.hero-text > p {
+  margin-top: 1.5rem;
+  color: #ffffff;
+  font-size: 18px;
+  margin-bottom: 3rem;
+}
+
+
+.hero-image {
+  max-height: 30rem;
+  padding: 1rem;
+}
+
+.hero-image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2rem;
+  
 }
 
 
