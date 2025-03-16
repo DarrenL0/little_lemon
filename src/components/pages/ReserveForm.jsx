@@ -51,14 +51,16 @@ const ReserveForm = () => {
 
       <fieldset>
         <legend>Time:</legend>
-        <label>
-          <input type="radio" name="time" value="lunch" checked={formData.time === "lunch"} onChange={handleChange} required />
-          Lunch
-        </label>
-        <label>
-          <input type="radio" name="time" value="dinner" checked={formData.time === "dinner"} onChange={handleChange} required />
-          Dinner
-        </label>
+        <div className="radio-group">
+          <label>
+            <input type="radio" name="time" value="lunch" checked={formData.time === "lunch"} onChange={handleChange} required />
+            Lunch
+          </label>
+          <label>
+            <input type="radio" name="time" value="dinner" checked={formData.time === "dinner"} onChange={handleChange} required />
+            Dinner
+          </label>
+        </div>
       </fieldset>
 
       <label>
@@ -86,12 +88,23 @@ const ReserveForm = () => {
         <textarea name="specialInstructions" value={formData.specialInstructions} onChange={handleChange} />
       </label>
 
-      <label>
-        <input type="checkbox" name="agreeTerms" checked={formData.agreeTerms} onChange={handleChange} required />
+      <label className="checkbox-form">
+        <input
+          type="checkbox"
+          name="agreeTerms"
+          id="agreeTerms"
+          checked={formData.agreeTerms}
+          onChange={handleChange}
+          required
+        />
+        <span className="custom-checkbox"></span>
         I agree to the <a href="/terms">Terms and Conditions</a> & <a href="/privacy">Privacy Policy</a>.
       </label>
 
-      <button type="submit">Reserve</button>
+      <div className="button-from">
+        <button type="submit">Reserve</button>
+        <button type="submit cancel">Cancel</button>
+      </div>
     </form>
   );
 };
