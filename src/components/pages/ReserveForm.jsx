@@ -1,27 +1,22 @@
-import { useState } from "react";
+import React from "react";
 
-
-const ReserveForm = () => {
-  const [formData, setFormData] = useState({
-    branch: "",
-    date: "",
-    time: "",
-    guests: 1,
-    name: "",
-    email: "",
-    phone: "",
-    specialInstructions: "",
-    agreeTerms: false,
-  });
-
+const ReserveForm = ({ formData, setFormData, availableTimes, dispatch }) => {
+  // Handle input changes
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
+
+    // If the user selects a date, dispatch to update available times
+    if (name === "date") {
+      dispatch({ type: "UPDATE_DATE", payload: value });
+    }
+
+    setFormData((prevData) => ({
+      ...prevData,
       [name]: type === "checkbox" ? checked : value,
-    });
+    }));
   };
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.agreeTerms) {
@@ -30,6 +25,22 @@ const ReserveForm = () => {
     }
     console.log("Reservation Submitted:", formData);
     alert("Reservation Confirmed!");
+  };
+
+  // Handle form reset
+  const handleReset = () => {
+    setFormData({
+      branch: "",
+      date: "",
+      time: "",
+      guests: 1,
+      occasion: "",
+      name: "",
+      email: "",
+      phone: "",
+      specialInstructions: "",
+      agreeTerms: false,
+    });
   };
 
   return (
@@ -45,27 +56,32 @@ const ReserveForm = () => {
       </label>
 
       <label>
-        Date:
+        Choose Date:
         <input type="date" name="date" value={formData.date} onChange={handleChange} required />
       </label>
 
-      <fieldset>
-        <legend>Time:</legend>
-        <div className="radio-group">
-          <label>
-            <input type="radio" name="time" value="lunch" checked={formData.time === "lunch"} onChange={handleChange} required />
-            Lunch
-          </label>
-          <label>
-            <input type="radio" name="time" value="dinner" checked={formData.time === "dinner"} onChange={handleChange} required />
-            Dinner
-          </label>
-        </div>
-      </fieldset>
+      <label>
+        Choose Time:
+        <select name="time" value={formData.time} onChange={handleChange} required>
+          <option value="">Select a time</option>
+          {availableTimes.map((time, index) => (
+            <option key={index} value={time}>{time}</option>
+          ))}
+        </select>
+      </label>
 
       <label>
         Number of Guests:
         <input type="number" name="guests" min="1" max="10" value={formData.guests} onChange={handleChange} required />
+      </label>
+
+      <label>
+        Occasion:
+        <select name="occasion" value={formData.occasion} onChange={handleChange}>
+          <option value="">Select an occasion</option>
+          <option value="birthday">Birthday</option>
+          <option value="anniversary">Anniversary</option>
+        </select>
       </label>
 
       <label>
@@ -92,7 +108,6 @@ const ReserveForm = () => {
         <input
           type="checkbox"
           name="agreeTerms"
-          id="agreeTerms"
           checked={formData.agreeTerms}
           onChange={handleChange}
           required
@@ -101,9 +116,9 @@ const ReserveForm = () => {
         I agree to the <a href="/terms">Terms and Conditions</a> & <a href="/privacy">Privacy Policy</a>.
       </label>
 
-      <div className="button-from">
+      <div className="button-form">
         <button type="submit">Reserve</button>
-        <button type="submit cancel">Cancel</button>
+        <button type="button" onClick={handleReset}>Cancel</button>
       </div>
     </form>
   );
