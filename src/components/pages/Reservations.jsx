@@ -2,12 +2,12 @@ import React, { useReducer, useState } from "react";
 import ReserveForm from "./ReserveForm";
 
 // Function to initialize available times
-const initializeTimes = () => [
+export const initializeTimes = () => [
   "17:00", "18:00", "19:00", "20:00", "21:00", "22:00"
 ];
 
 // Reducer function to update available times (static for now)
-const updateTimes = (state, action) => {
+export const updateTimes = (state, action) => {
   switch (action.type) {
     case "UPDATE_DATE":
       return initializeTimes(); // Future update: return different times based on date
