@@ -1,14 +1,9 @@
 import React from "react";
 
-const ReserveForm = ({ formData, setFormData, availableTimes, dispatch }) => {
+const ReserveForm = ({ formData, setFormData, availableTimes, handleDateChange }) => {
   // Handle input changes
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-
-    // If the user selects a date, dispatch to update available times
-    if (name === "date") {
-      dispatch({ type: "UPDATE_DATE", payload: value });
-    }
 
     setFormData((prevData) => ({
       ...prevData,
@@ -57,7 +52,7 @@ const ReserveForm = ({ formData, setFormData, availableTimes, dispatch }) => {
 
       <label>
         Choose Date:
-        <input type="date" name="date" value={formData.date} onChange={handleChange} required />
+        <input type="date" name="date" value={formData.date} onChange={handleDateChange} required />
       </label>
 
       <label>
