@@ -1,7 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const ReserveForm = ({ formData, setFormData, availableTimes, handleDateChange }) => {
-  // Handle input changes
+const ReserveForm = ({ formData, setFormData, availableTimes, handleDateChange, submitForm }) => {
+  const navigate = useNavigate();
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
 
@@ -14,28 +15,19 @@ const ReserveForm = ({ formData, setFormData, availableTimes, handleDateChange }
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     if (!formData.agreeTerms) {
       alert("You must agree to the Terms and Conditions.");
       return;
     }
-    console.log("Reservation Submitted:", formData);
-    alert("Reservation Confirmed!");
+
+    console.log("Submitting form data:", formData);
+    submitForm(formData); // Call the function passed from Reservations.jsx
   };
 
-  // Handle form reset
-  const handleReset = () => {
-    setFormData({
-      branch: "",
-      date: "",
-      time: "",
-      guests: 1,
-      occasion: "",
-      name: "",
-      email: "",
-      phone: "",
-      specialInstructions: "",
-      agreeTerms: false,
-    });
+  // Handle cancel button click (navigate back to home)
+  const handleCancel = () => {
+    navigate("/"); // Navigate back to the home page
   };
 
   return (
@@ -113,7 +105,7 @@ const ReserveForm = ({ formData, setFormData, availableTimes, handleDateChange }
 
       <div className="button-form">
         <button type="submit">Reserve</button>
-        <button type="button" onClick={handleReset}>Cancel</button>
+        <button type="button" onClick={handleCancel}>Cancel</button>
       </div>
     </form>
   );

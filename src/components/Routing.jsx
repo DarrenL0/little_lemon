@@ -5,6 +5,7 @@ import MenuPage from "./pages/Menu";
 import ReservationsPage from "./pages/Reservations";
 import AboutPage from "./pages/Branch";
 import ContactPage from "./pages/Contact";
+import ConfirmedBooking from "./pages/ConfirmedBooking";
 
 const Routing = () => {
   return (
@@ -14,6 +15,7 @@ const Routing = () => {
       <Route path="/reservations" element={<ReservationsPage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="/confirmed" element={<ConfirmedBooking />} />
       <Route path="*" element={<h1>404 - Page Not Found</h1>} />
     </Routes>
   )
