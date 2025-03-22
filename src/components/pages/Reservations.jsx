@@ -66,7 +66,7 @@ const Reservations = () => {
 
   return (
     <div className="reservation-container">
-      <h1 className="heading">Reserve a Table</h1>
+      <h1 className="heading" aria-label="Table Reservation Form">Reserve a Table</h1>
       <p className="subheading">Book your table at Little Lemon now!</p>
       <ReserveForm
         formData={formData}
