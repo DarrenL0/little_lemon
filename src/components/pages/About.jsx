@@ -1,10 +1,13 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import foodImage from '../../assets/restauranfood.jpg'
+import Special from './Special';
 
 const About = () => {
   return (
-    <article className="call-to-action">
+    <>
+      <article className="call-to-action">
+      <div className='pageWidth hero-page'>
         <section className="hero-text">
           <h1>Little Lemon</h1>
           <h2>Chicago</h2>
@@ -24,7 +27,10 @@ const About = () => {
         <section className="hero-image">
           <img src={foodImage} alt="Little Lemon restaurant cuisine" />
         </section>
-      </article>
+      </div>
+    </article>
+    <Special/>
+    </>
   )
 }
 

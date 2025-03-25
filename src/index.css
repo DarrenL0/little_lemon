@@ -90,7 +90,7 @@ img {
 .button-primary {
   background-color: #f4ce14;
   padding: 0.5rem 1rem 0.5rem 1rem;
-  border-radius: 0.2rem;
+  border-radius: 10px;
   font-family: "Karla";
   font-weight: 700;
   font-size: 1.5rem;
@@ -106,11 +106,13 @@ img {
   transition: 0.2s;
 }
 
+.pageWidth{
+  width: 66%;
+}
 /*Header Styling*/
 header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
   padding: 1rem;
 }
 
@@ -120,9 +122,10 @@ nav {
 
 nav ul {
   list-style: none; /* Remove bullet points */
-  display: flex; /* Align the list items horizontally */
-  justify-content: center; /* Center the items */
-  gap: 20px; /* Space between items */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
 }
 
 nav ul li {
@@ -144,12 +147,16 @@ nav ul li a:hover {
 /*HOME*/
 .call-to-action {
   background-color: #495e57;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-page{
   color: white;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 1.25rem 5rem 1.2rem 5rem;
+  padding: 1.25rem 0rem;
 }
-
 .hero-text{
   padding: 2rem;
 }
@@ -317,6 +324,78 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
+/* Special Styles*/
+
+.special{
+  display: flex;
+  justify-content: center;
+}
+.top-special {
+  display: flex;
+  justify-content: space-between;  /* Aligns children to the far left and right */
+  align-items: center;  /* Vertically centers the elements */
+}
+
+ .special h2{
+  margin: 50px 0px;
+  font-weight: 600;
+ }
+/*Puts the card on a horizontal row*/
+.specials-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*Creates the card*/
+.special-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  background-color: #e0e0e0;
+}
+
+.special-image {
+  width: 100%;
+  height: 200px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.top-card{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin: 30px 0px;
+}
+
+.price{
+  color: #E29F33;
+}
+
+.description{
+  padding: 10px;
+  margin: 30px 0px;
+  color:#495e57
+}
+
+.button-container{
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+.order-button {
+  background: none;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.order-button:hover {
+  color: #007bff;
+}
 
 /* Footer Styles */
 footer {
