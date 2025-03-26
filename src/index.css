@@ -329,6 +329,7 @@ nav ul li a:hover {
 .special{
   display: flex;
   justify-content: center;
+  height: 70vh;
 }
 .top-special {
   display: flex;
@@ -344,6 +345,7 @@ nav ul li a:hover {
 .specials-container {
   display: flex;
   justify-content: space-between;
+  
 }
 
 /*Creates the card*/
@@ -396,6 +398,56 @@ nav ul li a:hover {
 .order-button:hover {
   color: #007bff;
 }
+
+/*TESTIMONIAL*/
+.testimonials{
+  display: flex;
+  justify-content: center;
+  background-color:  #FBDABB;
+  height: 60vh;
+}
+.testimonial-subheading{
+  text-align: center;
+  margin: 70px 0px;
+}
+
+.testimonial-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.testimonial-card {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: left;
+  height: 300px;
+  width: 300px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.stars {
+  color: gold;
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+.stars .empty {
+  color: #ddd;
+}
+
 
 /* Footer Styles */
 footer {

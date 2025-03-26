@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import foodImage from '../../assets/restauranfood.jpg'
 import Special from './Special';
+import Testimonials from './Testimonials';
 
 const About = () => {
   return (
@@ -30,6 +31,7 @@ const About = () => {
       </div>
     </article>
     <Special/>
+    <Testimonials/>
     </>
   )
 }
