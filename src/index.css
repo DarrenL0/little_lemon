@@ -448,6 +448,74 @@ nav ul li a:hover {
   color: #ddd;
 }
 
+/*Branch*/
+
+.branch{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+
+.branch-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.branch-info {
+  flex: 1;
+  max-width: 50%;
+}
+
+.branch-info h1 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #495e57;
+}
+
+.branch-info h2 {
+  color: #E29F33;
+  margin-bottom: 1rem;
+}
+
+.branch-info p {
+  line-height: 1.5;
+  color: #495e57;
+}
+
+.branch-images {
+  flex: 1;
+  max-width: 45%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.branch-images img {
+  width: 70%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* First image (more to the left) */
+.image1 {
+  left: -20px; /* Move slightly left */
+  top: 0;
+  z-index: 2;
+}
+
+/* Second image (more to the right, overlapping slightly in the corner) */
+.image2 {
+  right: -20px; /* Move slightly right */
+  bottom: -150px; /* Move slightly down */
+  z-index: 1;
+  opacity: 0.9;
+}
 
 /* Footer Styles */
 footer {
