@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import SpecialCards from "./SpecialCards";
 import lemonDessert from "../../assets/lemon dessert.jpg";
 import greekSalad from "../../assets/greek salad.jpg";
@@ -28,25 +28,36 @@ const specials = [
   },
 ];
 
-
 const Special = () => {
   return (
-    <article className='special'>
-      <div className='pageWidth'>
-        <section >
-          <div className='top-special'>
-            <h2>This weeks specials!</h2>
-            <button className='button-primary'>Online Menu</button>
+    <article className="special" aria-labelledby="specials-heading">
+      <div className="pageWidth">
+        <section>
+          {/* Section heading for screen readers */}
+          <div className="top-special">
+            <h2 id="specials-heading">This week's specials!</h2>
+            <button 
+              className="button-primary" 
+              aria-label="View our online menu"
+            >
+              Online Menu
+            </button>
           </div>
-          <div className='specials-container'>
+
+          <div className="specials-container">
             {specials.map((item) => (
-              <SpecialCards key={item.id} special={item} />
+              <SpecialCards 
+                key={item.id} 
+                special={item} 
+                aria-labelledby={`special-${item.id}-name`} 
+                aria-describedby={`special-${item.id}-description`}
+              />
             ))}
           </div>
         </section>
       </div>
     </article>
-  )
-}
+  );
+};
 
-export default Special
+export default Special;

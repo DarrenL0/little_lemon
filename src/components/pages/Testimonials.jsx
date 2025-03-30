@@ -28,22 +28,25 @@ const testimonials = [
   },
 ];
 
-
 const Testimonials = () => {
   return (
-    <article className="testimonials">
+    <article className="testimonials" aria-labelledby="testimonial-heading">
       <div className="pageWidth">
-        <div className="testimonial-subheading">
-          <h2>What our customers say!</h2>
-        </div>
-        <div className="testimonial-container">
+        <section className="testimonial-subheading">
+          <h2 id="testimonial-heading">What our customers say!</h2>
+        </section>
+        <section className="testimonial-container">
           {testimonials.map((testimonial) => (
-            <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+            <TestimonialCard
+              key={testimonial.id}
+              testimonial={testimonial}
+              aria-labelledby={`testimonial-card-${testimonial.id}`}
+            />
           ))}
-        </div>
+        </section>
       </div>
     </article>
   );
 };
 
-export default Testimonials
+export default Testimonials;
